@@ -22,7 +22,12 @@ routes.get('/courses/:id', CoursesController.findById)
 
 routes.post('/instructors', InstructorsController.create);
 
+// rotas para lessons
+
+//cria uma lessons
 routes.post('/lessons', LessonsController.create);
+//busca uma lessons pelo id
+routes.get('/lessons/:id', LessonsController.findById)
 
 module.exports = routes;
 

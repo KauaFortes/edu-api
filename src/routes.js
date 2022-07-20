@@ -13,6 +13,8 @@ routes.get('/', IndexController.index);
 
 //cria o curso
 routes.post('/courses', CoursesController.create);
+//edita um curso
+routes.patch('/courses/:id', CoursesController.update)
 //busca todos os cursos
 routes.get('/courses', CoursesController.find);
 //busca um curso pelo id
@@ -21,6 +23,8 @@ routes.get('/courses/:id', CoursesController.findById)
 
 
 routes.post('/instructors', InstructorsController.create);
+
+
 
 // rotas para lessons
 

@@ -68,3 +68,37 @@ exports.findById = async (req, res) => {
     return res.status(500).send({ error: e.message || e });
   }
 }
+
+exports.update = async (req, res) => {
+  try {
+    const {id} = req.params
+    const NewCourse = req.body
+
+    const course = await knex
+    .select('*')
+    .from('courses')
+    .where({ id })
+    .first()
+    
+    if (!course) {
+      return res.status(404).send({
+        status: `Nenhum curso com o id ${id} foi encontrado`
+      })
+    }
+
+      await knex
+    .update(NewCourse)
+    .from('courses')
+    .where({ id })
+
+    const courseUpdate = await knex
+      .select('*')
+      .from('courses')
+      .where({ id })
+      .first()
+
+    return res.status(200).send(courseUpdate)
+  } catch (e) {
+    return res.status(500).send({ error: e.message || e });
+  }
+}

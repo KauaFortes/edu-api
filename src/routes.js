@@ -21,9 +21,12 @@ routes.get('/courses', CoursesController.find);
 routes.get('/courses/:id', CoursesController.findById)
 
 
+// rotas para os insturtores 
 
+//cria um instrutor
 routes.post('/instructors', InstructorsController.create);
-
+//editar um instrutor
+routes.patch('/instructors/:id', InstructorsController.update);
 
 
 // rotas para lessons

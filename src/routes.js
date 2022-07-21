@@ -25,7 +25,7 @@ routes.get('/courses/:id', CoursesController.findById)
 
 //cria um instrutor
 routes.post('/instructors', InstructorsController.create);
-//editar um instrutor
+//edita um instrutor
 routes.patch('/instructors/:id', InstructorsController.update);
 
 
@@ -35,6 +35,8 @@ routes.patch('/instructors/:id', InstructorsController.update);
 routes.post('/lessons', LessonsController.create);
 //busca uma lessons pelo id
 routes.get('/lessons/:id', LessonsController.findById)
+//edita um lessons pelo id
+routes.patch('/lessons/:id', LessonsController.update)
 
 module.exports = routes;
 
